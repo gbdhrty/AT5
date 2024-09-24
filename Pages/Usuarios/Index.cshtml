@@ -1,0 +1,25 @@
+﻿@page
+@model AT5.Pages.Usuarios.IndexModel
+@{
+    ViewData["Title"] = "Usuários";
+}
+<h2>@ViewData["Title"]</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>E-mail</th>
+            <th>Data de Nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var usuario in Model.Usuarios) {
+            <tr>
+                <td>@usuario.Nome</td>
+                <td>@usuario.Email</td>
+                <td>@usuario.DataNascimento.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/Usuarios/Criar" class="btn btn-primary">Cadastrar novo usuário</a>
